@@ -29,6 +29,47 @@ public class IntArrayWorker
     return total;
   }
   
+  public int getCount(int numberToFind)
+  {
+	  int count = 0;
+	  
+	  for (int [] row : matrix)
+	  {
+		  for(int item : row)
+		  {
+			  if(item == numberToFind)
+			  {
+				  count++;
+			  }
+		  }
+	  }
+	  
+	  return count;
+  }
+  
+  
+  public int getLargest()
+  
+  {
+	  int largest = Interger.MIN_VALUE;
+		  
+	  
+	  for (int [] row : matrix)
+	  {
+		  for (int item : row)
+		  {
+			  if (item > largest)
+			  {
+				  largest = item;
+			  }
+		  }
+	  }
+	  
+	  return largest;
+  }
+  
+  
+  
   /**
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array
@@ -91,13 +132,19 @@ public class IntArrayWorker
            col++)
       {
         if (row < col)
+        {
           matrix[row][col] = 1;
+        }
         else if (row == col)
+        {
           matrix[row][col] = 2;
+        }
         else
+        {
           matrix[row][col] = 3;
-      }
+        }
     }
   }
+ }
+    
  
-}
